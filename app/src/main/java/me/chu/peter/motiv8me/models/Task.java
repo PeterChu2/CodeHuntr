@@ -7,11 +7,13 @@ public class Task {
     String mDescription;
     String mName;
     int mReward;
+    int mSprintId;
 
-    public Task(String name, String description, int reward) {
+    public Task(String name, String description, int reward, int id) {
         mDescription = description;
         mName = name;
         mReward = reward;
+        mSprintId = id;
     }
 
     public String getDescription() {
@@ -25,4 +27,6 @@ public class Task {
     public int getReward() {
         return mReward;
     }
+
+    public int getSprintId() { return mSprintId; }
 }

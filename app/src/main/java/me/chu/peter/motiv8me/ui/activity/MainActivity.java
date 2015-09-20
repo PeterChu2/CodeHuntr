@@ -1,4 +1,4 @@
-package me.chu.peter.motiv8me.ui;
+package me.chu.peter.motiv8me.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;

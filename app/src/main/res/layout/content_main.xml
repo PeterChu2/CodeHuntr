@@ -29,7 +29,7 @@
             android:layout_height="300dp"
             android:layout_gravity="center"
             android:contentDescription="@string/app_name"
-            android:src="@android:drawable/picture_frame" />
+            android:src="@mipmap/ic_launcher" />
 
         <com.beardedhen.androidbootstrap.BootstrapButton
             android:id="@+id/btnSignUp"

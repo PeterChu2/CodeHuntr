@@ -5,4 +5,9 @@
     <string name="sign_in">Sign In</string>
     <string name="username_hint">Username</string>
     <string name="email_hint">Email</string>
+    <string name="name">Name</string>
+    <string name="description">Description</string>
+    <string name="points">Points</string>
+    <string name="add_sprint">Add Sprint</string>
+    <string name="github_username_hint">Github Username</string>
 </resources>
