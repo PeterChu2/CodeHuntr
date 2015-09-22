@@ -8,11 +8,10 @@ import android.os.Bundle;
  * Created by peter on 19/09/15.
  */
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
 import com.beardedhen.androidbootstrap.BootstrapEditText;
@@ -121,6 +120,13 @@ public class SignUpActivity extends AppCompatActivity implements ApiClient.ApiRe
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
     public void onUsersLoaded(List<User> users) {
         // nop
     }
@@ -133,7 +139,7 @@ public class SignUpActivity extends AppCompatActivity implements ApiClient.ApiRe
     @Override
     public void onLogin(TinderItem item) {
         mProgressDialog.dismiss();
-        Intent i = new Intent(SignUpActivity.this, TinderActivity.class);
+        Intent i = new Intent(SignUpActivity.this, CodeHuntrActivity.class);
         if(item.getClass() == User.class) {
             i.putExtra(Common.KEY_CRITERIA, ((User)item).getInterests());
             i.putExtra(Common.KEY_USER_TYPE, "developers");

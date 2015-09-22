@@ -4,29 +4,17 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
 import com.beardedhen.androidbootstrap.BootstrapEditText;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.JsonHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import me.chu.peter.motiv8me.R;
 import me.chu.peter.motiv8me.api.ApiClient;
@@ -81,6 +69,13 @@ public class LoginActivity extends AppCompatActivity implements ApiClient.ApiRes
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
     protected void onStart() {
         super.onStart();
         mRef = new Firebase(String.format(Common.FIREBASE_URL));
@@ -117,7 +112,7 @@ public class LoginActivity extends AppCompatActivity implements ApiClient.ApiRes
 //        params.put("username", mEtEmail.getText().toString());
 //        params.put("password", mEtPassword.getText().toString());
 //        Intent i = new Intent(LoginActivity.this, AuthenticatedHomeActivity.class);
-//        i = new Intent(LoginActivity.this, TinderActivity.class);
+//        i = new Intent(LoginActivity.this, CodeHuntrActivity.class);
 //        i.putExtra(Common.KEY_USER_TYPE, "developers");
 //        startActivity(i);
 //        mAsyncHttpClient.post(Common.FIREBASE_URL + "MAIDISENDPOINT", params, new JsonHttpResponseHandler() {
@@ -144,7 +139,7 @@ public class LoginActivity extends AppCompatActivity implements ApiClient.ApiRes
 //                        mRef.child("users").child(authData.getUid()).setValue(map);
 //
 //                        Intent i = new Intent(LoginActivity.this, AuthenticatedHomeActivity.class);
-//                        i = new Intent(LoginActivity.this, TinderActivity.class);
+//                        i = new Intent(LoginActivity.this, CodeHuntrActivity.class);
 //                        startActivity(i);
 //                    }
 //
@@ -183,7 +178,7 @@ public class LoginActivity extends AppCompatActivity implements ApiClient.ApiRes
     @Override
     public void onLogin(TinderItem item) {
         mProgressDialog.dismiss();
-        Intent i = new Intent(LoginActivity.this, TinderActivity.class);
+        Intent i = new Intent(LoginActivity.this, CodeHuntrActivity.class);
         if(item.getClass() == User.class) {
             i.putExtra(Common.KEY_CRITERIA, ((User)item).getInterests());
             i.putExtra(Common.KEY_USER_TYPE, "developers");

@@ -29,7 +29,7 @@
         <activity android:name=".ui.activity.AuthenticatedHomeActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.activity.TinderActivity"
+        <activity android:name=".ui.activity.CodeHuntrActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>

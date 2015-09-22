@@ -45,10 +45,12 @@
         android:id="@+id/divider_bottom"
         android:layout_width="fill_parent"
         android:layout_height="2dp"
-        android:layout_below="@id/image"/>
+        android:layout_below="@id/image"
+        android:background="@color/white"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/desc"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"/>
 </RelativeLayout>
